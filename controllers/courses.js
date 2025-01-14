@@ -19,7 +19,8 @@ const addCourse = async (DB_ID, courseName) =>{
                         },
                     ],
                 },
-        }})
+            },
+    })
 
         console.log('Added a course successfully')
         return course.id
