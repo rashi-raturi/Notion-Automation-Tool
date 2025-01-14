@@ -4,11 +4,12 @@ const addUnits = require('./units')
 
 
 
-const start = async (DB_IDS, courseName)=>{
+const start = async (DB_IDS, parsedData)=>{
     // add a course
     // return a course id
 
     const courses_db_id = DB_IDS[0]
+    const courseName = parsedData.courseName
     const COURSE_ID = await addCourse(courses_db_id, courseName)
 
 
@@ -18,9 +19,8 @@ const start = async (DB_IDS, courseName)=>{
     const units_db_id = DB_IDS[1]
     let unitPageIDs = await addUnits(units_db_id, COURSE_ID)
 
-
-
     // add topics and link them to these unit ids
+    let topics = parsedData.topics
 }
 
 module.exports = start
