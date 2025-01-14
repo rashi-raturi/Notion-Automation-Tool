@@ -11,7 +11,9 @@ const addTopics = async (DB_ID, unitPageIds, topics) => {
         // looping through all the topics and creating a page for them to link them to units
         for (const topic of unitTopics) {
           await notion.pages.create({
-            parent: DB_ID,
+            parent: {
+                database_id: DB_ID,
+            },
             properties: {
               Name: {
                 title: [

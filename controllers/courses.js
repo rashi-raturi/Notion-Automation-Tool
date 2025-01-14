@@ -1,43 +1,34 @@
 const connectToNotion = require('../db/connect')
 
-// get database info
-const getInfo = async (DB_ID) =>{
-    const notion = connectToNotion()
-
+// adds a new course and return its id
+const addCourse = async (DB_ID, courseName) =>{
     try {
-        const response = await notion.databases.retrieve({
-            database_id: DB_ID
-        })
-        return response
+        const notion = connectToNotion(DB_ID)
+
+        const course = await notion.pages.create({
+            parent: {
+                database_id : DB_ID,
+            },
+            properties: {
+                Name: {
+                title: [
+                        {
+                        text: {
+                            content: courseName,
+                            },
+                        },
+                    ],
+                },
+        }})
+
+        console.log('Added a course successfully')
+        return course.id
 
     } catch (error) {
-        console.log(error)
+        console.log('Error adding course : ', error)
+        throw error
+
     }
 }
 
-
-// related properties
-const relatedProperties = async(DB_ID)=>{
-    try {
-        const data = await getInfo(DB_ID)
-
-        const propertyObj = data.properties
-
-        let relations = new Map(
-            Object.keys(propertyObj)
-            .filter(key => propertyObj[key] && propertyObj[key].type === 'relation')
-            .map(key => [propertyObj[key].name , propertyObj[key].relation.database_id])
-        )
-
-        return relations
-    }
-    catch(error){
-        console.log(error)
-    }
-}
-
-
-module.exports = {
-    getInfo,
-    relatedProperties
-}
+module.exports = addCourse

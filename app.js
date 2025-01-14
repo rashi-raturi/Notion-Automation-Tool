@@ -1,9 +1,14 @@
 const express = require('express')
-const {relatedProperties} = require('./controllers/courses')
-require('dotenv').config()
 const app = express()
 
-relatedProperties(process.env.DATABASE_ID)
+require('dotenv').config()
+
+const start = require('./controllers/main')
+
+
+let DB_IDS = [process.env.COURSES_DB_ID, process.env.UNITS_DB_ID, process.env.TOPICS_DB_ID]
+start(DB_IDS, 'Test course')
+
 
 
 const PORT = 5000
