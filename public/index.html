@@ -4,27 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notion Automation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-control {
+            border-radius: 15px; /* Rounded corners for the input boxes */
+        }
+        label {
+            font-weight: bold; /* Bold labels */
+        }
+        .card {
+            border-radius: 15px; /* Rounded corners for the card */
+        }
+        .btn {
+            border-radius: 15px; /* Rounded corners for the button */
+        }
+    </style>
 </head>
 <body>
-    <form action="/submit-form" method="post">
-        <label for="courseName">Course Name</label>
-        <input type="text" name="courseName" id="courseName">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow-sm" style="width: 100%; max-width: 500px; border-top: 4px solid #28a745;">
+            <h3 class="text-center mb-4">Course Form</h3>
+            <form action="/submit-form" method="post">
+                <div class="form-group">
+                    <label for="courseName">Course Name</label>
+                    <input type="text" class="form-control" name="courseName" id="courseName" placeholder="Enter course name">
+                </div>
+                <div class="form-group">
+                    <label for="unit1">Unit 1</label>
+                    <textarea class="form-control" name="unit1" id="unit1" placeholder="Enter text here..." rows="1" style="height: 50px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="unit2">Unit 2</label>
+                    <textarea class="form-control" name="unit2" id="unit2" placeholder="Enter text here..." rows="1" style="height: 50px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="unit3">Unit 3</label>
+                    <textarea class="form-control" name="unit3" id="unit3" placeholder="Enter text here..." rows="1" style="height: 50px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="unit4">Unit 4</label>
+                    <textarea class="form-control" name="unit4" id="unit4" placeholder="Enter text here..." rows="1" style="height: 50px;"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="unit5">Unit 5</label>
+                    <textarea class="form-control" name="unit5" id="unit5" placeholder="Enter text here..." rows="1" style="height: 50px;"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-block">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        <label for="unit1">Unit 1</label>
-        <input type="text" name="unit1" id="unit1">
-        <label for="unit1">Unit 2</label>
-        <input type="text" name="unit2" id="unit2">
-        <label for="unit1">Unit 3</label>
-        <input type="text" name="unit3" id="unit3">
-        <label for="unit1">Unit 4</label>
-        <input type="text" name="unit4" id="unit4">
-        <label for="unit1">Unit 5</label>
-        <input type="text" name="unit5" id="unit5">
-
-        <button type="submit">Submit</button>
-    </form>
-
-
-    <script src="/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
