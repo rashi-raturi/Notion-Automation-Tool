@@ -21,7 +21,7 @@ Duplicate the Notion template by visiting the provided link: [Notion Template Li
 ### Step 2: Clone the repo and install dependencies
 1. Clone this repository using your preferred method:
    ```bash
-   git clone https://github.com/yourusername/notion-academic-automation.git
+   git clone https://github.com/rashi-raturi/Notion-Automation-Tool.git
    
 2. Install dependencies by running
    ```bash
@@ -29,9 +29,9 @@ Duplicate the Notion template by visiting the provided link: [Notion Template Li
 
 ### Step 3: Setup environment variables
  1. Create a .env file and put the following variables
-    `COURSE_ID` - ID of the course database
+    `COURSES_ID` - ID of the course database
     `UNITS_ID` - ID of the units database
-    `TOPCIS_ID` - ID of the topics database
+    `TOPICS_ID` - ID of the topics database
 
 2. **Do not commit the .env file**
 
