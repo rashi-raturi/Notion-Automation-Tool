@@ -1,4 +1,4 @@
-# Notion Syllabus Progress Tracker Automation
+# Notion Syllabus Tracker Automation Tool
 
 Description
 ------------
